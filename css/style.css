@@ -39,3 +39,94 @@ HEX: #a79e84 = Light Grey
 HEX: #7a3b2e = Clay
 
 */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1fr, 12)
+}
+
+/*HEADER AND IT'S CONTENTS*/
+header {
+  background-color: #454140;
+  background-image: url(/img/arrow-1564329_960_720.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 20%;
+  color: #d8d7d4;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  text-align: center;
+  justify-content: space-between;
+}
+.signature {
+  color: grey;
+}
+
+.title {
+  font: ubuntu;
+  font-size: 4em;
+  font-weight: bold;
+  font-style: oblique;
+}
+
+.subtitle {
+  color: #ffcea0;
+  text-shadow: 2px 2px 2px black;
+  padding-top: 1em;
+}
+
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.navlink {
+  background-color: #1f1e1c;
+  border: 1px solid black;
+  color: #bd5734;
+  width: 20%;
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 0.3em;
+  transition: 0.3s ease-in-out;
+  position: sticky;
+  top: 0px;
+}
+
+.navlink:not(:last-child) {
+  border-right: none;
+}
+
+.navlink:hover {
+  background-color: #bd5734;
+  color: lightgoldenrodyellow;
+  width: 25%;
+}
+
+.navlink:active {
+  background-color: white;
+  color: #454140;
+  transition: 0s;
+}
+
+/*HEADER AND IT'S CONTENTS*/
+
+
+
+
+/*MediaQuery responsiveness*/
+@media only screen and (max-width: 600px) {
+  header {
+    height: 55vh; 
+    background-position: 50% 20%; 
+    background-size: 25%
+  }
+  
+  .title {font-size: 10vw}
+  .subtitle {font-size: 4vw}
+  .navlink {font-size: 4vw}
+}
