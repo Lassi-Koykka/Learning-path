@@ -42,11 +42,12 @@ HEX: #7a3b2e = Clay
 
 .container {
   display: grid;
-  grid-template-columns: repeat(1fr, 12)
+  grid-template-columns: repeat(12, 1fr)
 }
 
 /*HEADER AND IT'S CONTENTS*/
 header {
+  grid-column: 1 / span 12;
   background-color: #454140;
   background-image: url(/img/arrow-1564329_960_720.png);
   background-repeat: no-repeat;
@@ -93,8 +94,6 @@ nav {
   font-size: 1.5em;
   padding: 0.3em;
   transition: 0.3s ease-in-out;
-  position: sticky;
-  top: 0px;
 }
 
 .navlink:not(:last-child) {
@@ -113,7 +112,48 @@ nav {
   transition: 0s;
 }
 
-/*HEADER AND IT'S CONTENTS*/
+/*Projects*/
+.projects {
+  grid-column: 1 / span 9;
+  background: #d8d7d4;
+  text-align: center;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+  padding: 0.5em;
+  color: #d8d7d4;
+}
+
+
+.project {
+  background-color: #24292e;;
+  border: solid 2px black;
+  border-radius: 5px;
+}
+
+.projectThumbnail {
+  outline: lightgoldenrodyellow 1px dashed;
+  height: 55%;
+  width: 95%;
+  margin: 2.5%;
+}
+.description {
+  text-overflow: ellipsis;
+}
+
+
+/*blogs*/
+.blogs {
+  grid-column: 10 / span 3;
+}
+
+/*About container*/
+.aboutContainer {
+  grid-column: 1 / span 9;
+}
 
 
 
@@ -129,4 +169,31 @@ nav {
   .title {font-size: 10vw}
   .subtitle {font-size: 4vw}
   .navlink {font-size: 4vw}
+
+}
+
+@media only screen and (max-width: 1000px) {
+  /*Projects responsieveness*/
+  .projects {
+    grid-column: 1 / span 12;
+    overflow-x: scroll;
+  }
+  .projectsGrid {
+    grid-auto-flow: column dense;
+  }
+
+  .headerProjects {
+    position: sticky;
+    position: -webkit-sticky;
+    left: 0;
+  }
+
+  .project {
+    min-width: 47vw;
+  }
+
+  /*Blogs*/
+  .blogs {
+    grid-column: 1 / span 12;
+  }
 }
